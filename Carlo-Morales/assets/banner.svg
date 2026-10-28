@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Carlo Ramsés Morales</title>
+  <desc id="d">Estudiante de Ingeniería en Computación Inteligente en la UAA. A la derecha, un árbol de Huffman que se recorre con DFS y va asignando los códigos.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.6" stop-color="#14123a"/>
+      <stop offset="1" stop-color="#241446"/>
+    </linearGradient>
+    <radialGradient id="glowR" cx="0.79" cy="0.48" r="0.42">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowL" cx="0.06" cy="0.05" r="0.55">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="340" rx="18"/></clipPath>
+  </defs>
+
+  <style>
+    .sans { font-family: 'Segoe UI', 'Helvetica Neue', Ubuntu, Helvetica, Arial, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, Menlo, 'Liberation Mono', 'DejaVu Sans Mono', monospace; }
+
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { fill-opacity: 0; } }
+
+    .node { fill: #1b1f4a; stroke: #4c4f8a; stroke-width: 2.5; }
+    .edge { stroke: #4c4f8a; stroke-width: 2.5; stroke-linecap: round; }
+
+    /* Recorrido DFS en preorden: 39 → 14 → a → b → 25 → c → d */
+    .v0 { animation: v0 9s infinite; }
+    .v1 { animation: v1 9s infinite; }
+    .v2 { animation: v2 9s infinite; }
+    .v3 { animation: v3 9s infinite; }
+    .v4 { animation: v4 9s infinite; }
+    .v5 { animation: v5 9s infinite; }
+    .v6 { animation: v6 9s infinite; }
+    @keyframes v0 { 0%, 4%  { fill: #1b1f4a; stroke: #4c4f8a; } 7%, 88%  { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v1 { 0%, 16% { fill: #1b1f4a; stroke: #4c4f8a; } 19%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v2 { 0%, 28% { fill: #1b1f4a; stroke: #4c4f8a; } 31%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v3 { 0%, 40% { fill: #1b1f4a; stroke: #4c4f8a; } 43%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v4 { 0%, 52% { fill: #1b1f4a; stroke: #4c4f8a; } 55%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v5 { 0%, 64% { fill: #1b1f4a; stroke: #4c4f8a; } 67%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+    @keyframes v6 { 0%, 76% { fill: #1b1f4a; stroke: #4c4f8a; } 79%, 88% { fill: #6d28d9; stroke: #c4b5fd; } 95%, 100% { fill: #1b1f4a; stroke: #4c4f8a; } }
+
+    /* Cada código aparece cuando el DFS llega a su hoja */
+    .k2 { animation: k2 9s infinite; }
+    .k3 { animation: k3 9s infinite; }
+    .k5 { animation: k5 9s infinite; }
+    .k6 { animation: k6 9s infinite; }
+    @keyframes k2 { 0%, 28% { fill-opacity: 0.25; } 31%, 88% { fill-opacity: 1; } 95%, 100% { fill-opacity: 0.25; } }
+    @keyframes k3 { 0%, 40% { fill-opacity: 0.25; } 43%, 88% { fill-opacity: 1; } 95%, 100% { fill-opacity: 0.25; } }
+    @keyframes k5 { 0%, 64% { fill-opacity: 0.25; } 67%, 88% { fill-opacity: 1; } 95%, 100% { fill-opacity: 0.25; } }
+    @keyframes k6 { 0%, 76% { fill-opacity: 0.25; } 79%, 88% { fill-opacity: 1; } 95%, 100% { fill-opacity: 0.25; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor, .v0, .v1, .v2, .v3, .v4, .v5, .v6, .k2, .k3, .k5, .k6 { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <!-- Fondo -->
+    <rect width="1200" height="340" fill="url(#bg)"/>
+    <rect width="1200" height="340" fill="url(#dots)"/>
+    <rect width="1200" height="340" fill="url(#glowL)"/>
+    <rect width="1200" height="340" fill="url(#glowR)"/>
+    <line x1="745" y1="56" x2="745" y2="292" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+
+    <!-- Lado izquierdo: presentación -->
+    <text x="70" y="88" class="mono" font-size="18" xml:space="preserve"><tspan fill="#7ee787">&gt; </tspan><tspan fill="#ff7b72">std::cout</tspan><tspan fill="#c9d1d9"> &lt;&lt; </tspan><tspan fill="#a5d6ff">"¡Hola, mundo!"</tspan><tspan fill="#c9d1d9">;</tspan><tspan class="cursor" fill="#7ee787" font-weight="700">_</tspan></text>
+
+    <text x="68" y="156" class="sans" font-size="50" font-weight="700" fill="#f0f6fc">Carlo Ramsés Morales</text>
+    <text x="70" y="196" class="sans" font-size="22" fill="#a5b4fc">Ingeniería en Computación Inteligente · UAA</text>
+
+    <g class="mono" font-size="15" fill="#e6edf3" text-anchor="middle">
+      <rect x="70"  y="224" width="120" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.55"/>
+      <text x="130" y="246">Algoritmos</text>
+      <rect x="200" y="224" width="185" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.55"/>
+      <text x="292.5" y="246">Prog. competitiva</text>
+      <rect x="395" y="224" width="58"  height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.55"/>
+      <text x="424" y="246">C++</text>
+      <rect x="463" y="224" width="84"  height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.55"/>
+      <text x="505" y="246">Python</text>
+      <rect x="557" y="224" width="74"  height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.55"/>
+      <text x="594" y="246">Swift</text>
+    </g>
+
+    <text x="70" y="300" class="mono" font-size="14" fill="#8b949e">// competidor ICPC · coach en CPC Gallos · Aguascalientes, MX</text>
+
+    <!-- Lado derecho: árbol de Huffman recorrido con DFS -->
+    <g>
+      <line class="edge v1" x1="950" y1="78"  x2="860"  y2="162"/>
+      <line class="edge v4" x1="950" y1="78"  x2="1040" y2="162"/>
+      <line class="edge v2" x1="860" y1="162" x2="810"  y2="246"/>
+      <line class="edge v3" x1="860" y1="162" x2="910"  y2="246"/>
+      <line class="edge v5" x1="1040" y1="162" x2="990"  y2="246"/>
+      <line class="edge v6" x1="1040" y1="162" x2="1090" y2="246"/>
+    </g>
+
+    <g class="mono" font-size="14" fill="#8b949e" text-anchor="middle">
+      <text x="892"  y="116">0</text>
+      <text x="1008" y="116">1</text>
+      <text x="820"  y="208">0</text>
+      <text x="900"  y="208">1</text>
+      <text x="1000" y="208">0</text>
+      <text x="1080" y="208">1</text>
+    </g>
+
+    <g>
+      <circle class="node v0" cx="950"  cy="78"  r="27"/>
+      <circle class="node v1" cx="860"  cy="162" r="25"/>
+      <circle class="node v4" cx="1040" cy="162" r="25"/>
+      <circle class="node v2" cx="810"  cy="246" r="22"/>
+      <circle class="node v3" cx="910"  cy="246" r="22"/>
+      <circle class="node v5" cx="990"  cy="246" r="22"/>
+      <circle class="node v6" cx="1090" cy="246" r="22"/>
+    </g>
+
+    <g class="mono" fill="#f0f6fc" text-anchor="middle" font-weight="700">
+      <text x="950"  y="78"  dy="0.35em" font-size="17">39</text>
+      <text x="860"  y="162" dy="0.35em" font-size="16">14</text>
+      <text x="1040" y="162" dy="0.35em" font-size="16">25</text>
+      <text x="810"  y="246" dy="0.35em" font-size="18">a</text>
+      <text x="910"  y="246" dy="0.35em" font-size="18">b</text>
+      <text x="990"  y="246" dy="0.35em" font-size="18">c</text>
+      <text x="1090" y="246" dy="0.35em" font-size="18">d</text>
+    </g>
+
+    <g class="mono" font-size="13" fill="#8b949e" text-anchor="middle">
+      <text x="810"  y="288">5</text>
+      <text x="910"  y="288">9</text>
+      <text x="990"  y="288">12</text>
+      <text x="1090" y="288">13</text>
+    </g>
+
+    <text x="950" y="322" class="mono" font-size="15" text-anchor="middle"><tspan fill="#8b949e">huffman(dfs): </tspan><tspan class="k2" fill="#7ee787">a=00</tspan><tspan dx="12" class="k3" fill="#7ee787">b=01</tspan><tspan dx="12" class="k5" fill="#7ee787">c=10</tspan><tspan dx="12" class="k6" fill="#7ee787">d=11</tspan></text>
+  </g>
+</svg>
